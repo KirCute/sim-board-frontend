@@ -442,6 +442,12 @@ const minPlaceId = computed(() => {
     </svg>
   </button>
 
+  <table class="player-table">
+    <tr v-for="p in gameState.players">
+      <td>{{p}}</td>
+    </tr>
+  </table>
+
   <div v-if="showDeckMenu" id="deck-menu" class="modal show">
     <div class="modal-content">
       <div class="modal-header">
@@ -612,5 +618,21 @@ const minPlaceId = computed(() => {
   position: absolute;
   transform: translate(-50%, -50%);
   user-select: none;
+}
+
+.player-table {
+  border-collapse: collapse;
+  background-color: rgba(128, 128, 128, 0.5);
+  color: white;
+  position: absolute;
+  right: 0;
+  top: 130px;
+  z-index: 100;
+}
+
+.player-table td {
+  border: none;
+  font-family: Arial, sans-serif;
+  font-size: 2vh;
 }
 </style>
